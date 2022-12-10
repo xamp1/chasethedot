@@ -1,4 +1,4 @@
-class Chased {
+class SnakeGame {
   constructor() {
     this.$app = document.querySelector('#app');
     this.$canvas = this.$app.querySelector('canvas');
@@ -36,13 +36,14 @@ class Chased {
     this.soundEffects = {
       notif: new Audio('./sounds/alert.wav'),
       score: new Audio('./sounds/chased.wav'),
-      gameOver: new Audio('./sounds/end.mp3'),
-      backgroundsfx: new Audio('./sound/backgroundsfx')
+      gameOver: new Audio('./sounds/end.mp3')
+      //bgsfx onprogress
+      // backgroundsfx: new Audio('./sound/backgroundsfx')
     };
 
     this.setUpGame();
     this.init();
-    this.soundEffects.gameOver.volume = 2;
+    this.soundEffects.gameOver.volume = 0.7;
   }
 
   init() {
@@ -57,7 +58,7 @@ class Chased {
     this.$startScreen.querySelector('.play-btn').addEventListener('click', () => {
       this.startGame();
       this.soundEffects.notif.play();
-      this.soundEffects.notif.volume = 0.4;
+      this.soundEffects.notif.volume = 0.2;
     });
   }
 
@@ -192,7 +193,7 @@ class Chased {
       this.game.score += 10;
       this.$score.innerText = this.game.score;
       this.soundEffects.score.play();
-      this.soundEffects.score.volume = 0.4;
+      this.soundEffects.score.volume = 0.2;
     } else {
       this.snake.pop();
     }
