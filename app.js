@@ -42,6 +42,7 @@ class SnakeGame {
 
     this.setUpGame();
     this.init();
+    this.soundEffects.gameOver.volume = 2;
   }
 
   init() {
@@ -56,6 +57,7 @@ class SnakeGame {
     this.$startScreen.querySelector('.play-btn').addEventListener('click', () => {
       this.startGame();
       this.soundEffects.notif.play();
+      this.soundEffects.notif.volume = 0.4;
     });
   }
 
@@ -190,6 +192,7 @@ class SnakeGame {
       this.game.score += 10;
       this.$score.innerText = this.game.score;
       this.soundEffects.score.play();
+      this.soundEffects.score.volume = 0.4;
     } else {
       this.snake.pop();
     }
