@@ -34,6 +34,7 @@ class SnakeGame {
     };
 
     this.soundEffects = {
+      notif: new Audio('./sounds/alert.wav'),
       score: new Audio('./sounds/chased.wav'),
       gameOver: new Audio('./sounds/end.mp3'),
       backgroundsfx: new Audio('./sound/backgroundsfx')
@@ -54,6 +55,7 @@ class SnakeGame {
     // Play
     this.$startScreen.querySelector('.play-btn').addEventListener('click', () => {
       this.startGame();
+      this.soundEffects.notif.play();
     });
   }
 
