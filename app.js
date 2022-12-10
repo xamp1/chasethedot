@@ -36,7 +36,8 @@ class SnakeGame {
     this.soundEffects = {
       notif: new Audio('./sounds/alert.wav'),
       score: new Audio('./sounds/chased.wav'),
-      gameOver: new Audio('./sounds/end.mp3')
+      gameOver: new Audio('./sounds/end.mp3'),
+      select: new Audio('./sounds/select.wav')
       //bgsfx onprogress
       // backgroundsfx: new Audio('./sound/backgroundsfx')
     };
@@ -52,6 +53,8 @@ class SnakeGame {
     // and attaching seperate event listeners on each item, it's more efficient to just listen in on the container and run a check at runtime
     this.$startScreen.querySelector('.options').addEventListener('click', event => {
       this.chooseDifficulty(event.target.dataset.difficulty);
+      this.soundEffects.select.play();
+      this.soundEffects.select.volume = 0.2;
     });
 
     // Play
