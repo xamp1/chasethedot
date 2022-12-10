@@ -1,4 +1,4 @@
-class SnakeGame {
+class Chased {
   constructor() {
     this.$app = document.querySelector('#app');
     this.$canvas = this.$app.querySelector('canvas');
